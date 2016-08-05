@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.bojie.earthquakebo;
+package us.bojie.earthquakebo.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +21,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import us.bojie.earthquakebo.R;
 
 public class EarthquakeActivity extends AppCompatActivity {
 
