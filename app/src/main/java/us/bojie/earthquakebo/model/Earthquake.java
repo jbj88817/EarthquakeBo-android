@@ -10,6 +10,9 @@ public class Earthquake {
     private String mLocation;
     private Date mTime;
 
+    public Earthquake() {
+    }
+
     public Earthquake(double mMagnitude, String mLocation, Date mTime) {
         this.mMagnitude = mMagnitude;
         this.mLocation = mLocation;

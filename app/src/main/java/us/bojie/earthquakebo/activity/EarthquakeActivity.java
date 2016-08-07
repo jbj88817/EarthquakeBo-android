@@ -26,6 +26,7 @@ import java.util.Date;
 import us.bojie.earthquakebo.R;
 import us.bojie.earthquakebo.adapter.EarthquakeAdapter;
 import us.bojie.earthquakebo.model.Earthquake;
+import us.bojie.earthquakebo.util.QueryUtils;
 
 public class EarthquakeActivity extends AppCompatActivity {
 
@@ -39,14 +40,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         Log.i(LOG_TAG, new Date().getTime()+"");
 
         // Create a fake list of earthquake locations.
-        ArrayList<Earthquake> earthquakes = new ArrayList<>();
-        earthquakes.add(new Earthquake(2.2, "San Francisco", new Date(1470433801000L)));
-        earthquakes.add(new Earthquake(4.1, "London", new Date(1388620046000L)));
-        earthquakes.add(new Earthquake(3.9, "Tokyo", new Date(1388620046003L)));
-        earthquakes.add(new Earthquake(2.4, "Mexico City", new Date(1388620046200L)));
-        earthquakes.add(new Earthquake(2.8, "Moscow", new Date(1388620046030L)));
-        earthquakes.add(new Earthquake(4.9, "Rio de Janeiro", new Date(1388620546000L)));
-        earthquakes.add(new Earthquake(1.6, "Paris", new Date(1388620046020L)));
+        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
