@@ -13,4 +13,9 @@ public class DateFormatter {
         SimpleDateFormat dt = new SimpleDateFormat("MMM d, yyyy", Locale.US);
         return dt.format(date);
     }
+
+    public static String DateToStrHMA(Date date) {
+        SimpleDateFormat dt = new SimpleDateFormat("h:mm a", Locale.US);
+        return dt.format(date);
+    }
 }
