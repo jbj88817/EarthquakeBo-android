@@ -7,12 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import us.bojie.earthquakebo.R;
 import us.bojie.earthquakebo.model.Earthquake;
 import us.bojie.earthquakebo.util.DateFormatter;
-import us.bojie.earthquakebo.util.TextSpliter;
+import us.bojie.earthquakebo.util.TextSplitter;
 
 /**
  * Created by bjiang on 8/4/16.
@@ -38,13 +39,17 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         // Binding data to TextView
 
         TextView MagnitudeTextView = (TextView) listItemView.findViewById(R.id.tv_mag);
-        MagnitudeTextView.setText(String.valueOf(currentEarthquake.getmMagnitude()));
+        double mag = currentEarthquake.getmMagnitude();
+        DecimalFormat formatter = new DecimalFormat("0.0");
+        MagnitudeTextView.setText(formatter.format(mag));
 
         TextView direLocationTextView = (TextView) listItemView.findViewById(R.id.tv_dire_location);
-        direLocationTextView.setText(TextSpliter.splitLocation(currentEarthquake.getmLocation())[0]);
+        direLocationTextView.setText(TextSplitter.splitLocation(getContext(),
+                currentEarthquake.getmLocation())[0]);
 
         TextView LocationTextView = (TextView) listItemView.findViewById(R.id.tv_location);
-        LocationTextView.setText(TextSpliter.splitLocation(currentEarthquake.getmLocation())[1]);
+        LocationTextView.setText(TextSplitter.splitLocation(getContext(),
+                currentEarthquake.getmLocation())[1]);
 
         TextView DateTextView = (TextView) listItemView.findViewById(R.id.tv_date);
         DateTextView.setText(DateFormatter.DateToStrMdY(currentEarthquake.getmTime()));
