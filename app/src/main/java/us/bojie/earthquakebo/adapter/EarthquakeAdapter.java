@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import us.bojie.earthquakebo.R;
 import us.bojie.earthquakebo.model.Earthquake;
 import us.bojie.earthquakebo.util.DateFormatter;
+import us.bojie.earthquakebo.util.TextSpliter;
 
 /**
  * Created by bjiang on 8/4/16.
@@ -39,8 +40,11 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         TextView MagnitudeTextView = (TextView) listItemView.findViewById(R.id.tv_mag);
         MagnitudeTextView.setText(String.valueOf(currentEarthquake.getmMagnitude()));
 
+        TextView direLocationTextView = (TextView) listItemView.findViewById(R.id.tv_dire_location);
+        direLocationTextView.setText(TextSpliter.splitLocation(currentEarthquake.getmLocation())[0]);
+
         TextView LocationTextView = (TextView) listItemView.findViewById(R.id.tv_location);
-        LocationTextView.setText(currentEarthquake.getmLocation());
+        LocationTextView.setText(TextSpliter.splitLocation(currentEarthquake.getmLocation())[1]);
 
         TextView DateTextView = (TextView) listItemView.findViewById(R.id.tv_date);
         DateTextView.setText(DateFormatter.DateToStrMdY(currentEarthquake.getmTime()));
