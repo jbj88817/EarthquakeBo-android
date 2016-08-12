@@ -66,9 +66,9 @@ public final class QueryUtils {
                 Date date  = new Date(time);
 
                 // add
-                earthquake.setmMagnitude(mag);
-                earthquake.setmLocation(location);
-                earthquake.setmTime(date);
+                earthquake.setMagnitude(mag);
+                earthquake.setLocation(location);
+                earthquake.setTime(date);
 
                 earthquakes.add(earthquake);
 

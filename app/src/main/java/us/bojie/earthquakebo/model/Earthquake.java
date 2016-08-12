@@ -19,27 +19,27 @@ public class Earthquake {
         this.mTime = mTime;
     }
 
-    public double getmMagnitude() {
+    public double getMagnitude() {
         return mMagnitude;
     }
 
-    public void setmMagnitude(double mMagnitude) {
-        this.mMagnitude = mMagnitude;
+    public void setMagnitude(double magnitude) {
+        mMagnitude = magnitude;
     }
 
-    public String getmLocation() {
+    public String getLocation() {
         return mLocation;
     }
 
-    public void setmLocation(String mLocation) {
-        this.mLocation = mLocation;
+    public void setLocation(String location) {
+        mLocation = location;
     }
 
-    public Date getmTime() {
+    public Date getTime() {
         return mTime;
     }
 
-    public void setmTime(Date mTime) {
-        this.mTime = mTime;
+    public void setTime(Date time) {
+        mTime = time;
     }
 }

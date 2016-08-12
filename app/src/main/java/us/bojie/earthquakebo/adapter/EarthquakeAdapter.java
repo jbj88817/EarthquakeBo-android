@@ -38,24 +38,27 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Binding data to TextView
 
-        TextView MagnitudeTextView = (TextView) listItemView.findViewById(R.id.tv_mag);
-        double mag = currentEarthquake.getmMagnitude();
+        TextView magnitudeTextView = (TextView) listItemView.findViewById(R.id.tv_mag);
+
+        // Format decimal
+        double mag = currentEarthquake.getMagnitude();
         DecimalFormat formatter = new DecimalFormat("0.0");
-        MagnitudeTextView.setText(formatter.format(mag));
+        magnitudeTextView.setText(formatter.format(mag));
+
 
         TextView direLocationTextView = (TextView) listItemView.findViewById(R.id.tv_dire_location);
         direLocationTextView.setText(TextSplitter.splitLocation(getContext(),
-                currentEarthquake.getmLocation())[0]);
+                currentEarthquake.getLocation())[0]);
 
-        TextView LocationTextView = (TextView) listItemView.findViewById(R.id.tv_location);
-        LocationTextView.setText(TextSplitter.splitLocation(getContext(),
-                currentEarthquake.getmLocation())[1]);
+        TextView locationTextView = (TextView) listItemView.findViewById(R.id.tv_location);
+        locationTextView.setText(TextSplitter.splitLocation(getContext(),
+                currentEarthquake.getLocation())[1]);
 
-        TextView DateTextView = (TextView) listItemView.findViewById(R.id.tv_date);
-        DateTextView.setText(DateFormatter.DateToStrMdY(currentEarthquake.getmTime()));
+        TextView dateTextView = (TextView) listItemView.findViewById(R.id.tv_date);
+        dateTextView.setText(DateFormatter.DateToStrMdY(currentEarthquake.getTime()));
 
-        TextView TimeTextView = (TextView) listItemView.findViewById(R.id.tv_time);
-        TimeTextView.setText(DateFormatter.DateToStrHMA(currentEarthquake.getmTime()));
+        TextView timeTextView = (TextView) listItemView.findViewById(R.id.tv_time);
+        timeTextView.setText(DateFormatter.DateToStrHMA(currentEarthquake.getTime()));
 
         return listItemView;
     }
